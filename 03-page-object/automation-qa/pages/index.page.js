@@ -1,8 +1,8 @@
-const { BasePage } = require('./base.page')
+const { BasePage } = require('./base.page');
 
 class IndexPage extends BasePage {
     constructor() {
-        super()
+        super();
         this.title = $('h1');
         this.text1 = $('#text1');
         this.text2 = $('#text2');
@@ -17,5 +17,5 @@ class IndexPage extends BasePage {
 }
 
 module.exports = {
-    IndexPage
-}
+    IndexPage,
+};

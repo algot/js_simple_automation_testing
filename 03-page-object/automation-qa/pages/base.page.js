@@ -1,19 +1,19 @@
 class BasePage {
-    constructor() { }
+    constructor() {}
 
     async sendKeys(dataObj) {
         for (const key of Object.keys(dataObj)) {
-            await this[key].sendKeys(dataObj[key])
+            await this[key].sendKeys(dataObj[key]);
         }
     }
 
     async click(dataObj) {
         for (const key of Object.keys(dataObj)) {
-            await this[key].sendKeys(dataObj[key])
+            await this[key].sendKeys(dataObj[key]);
         }
     }
 }
 
 module.exports = {
-    BasePage
-}
+    BasePage,
+};
