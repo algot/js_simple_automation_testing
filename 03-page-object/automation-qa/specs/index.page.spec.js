@@ -1,17 +1,32 @@
-const { expect } = require('chai');
-const { IndexPage } = require('../pages/index.page')
+const { expect } = require("chai");
+const { IndexPage } = require("../pages/index.page");
 
-describe('angularjs homepage todo list', function () {
-    const indexPage = new IndexPage
-    before(function () {
-        browser.waitForAngularEnabled(false);
-        browser.driver.manage().window().maximize();
-    })
+describe("Set values to fields", function () {
+  const indexPage = new IndexPage();
 
-    it('should add todo', async function () {
-        await browser.get('http://localhost:8081/');
+  beforeEach(async function () {
+    browser.waitForAngularEnabled(false);
+    browser.driver.manage().window().maximize();
+    await browser.get("http://localhost:8081/");
+  });
 
-        await $('#text1').sendKeys('write first protractor test')
-        await browser.sleep(10000)
-    });
+  afterEach(async function () {
+    await browser.sleep(3000);
+  });
+
+  it("set first and second fields", async function () {
+    const dataObj = {
+      text1: "text 1 from test 1",
+      text2: "text 2 from test 1",
+    };
+    await indexPage.sendKeys(dataObj);
+  });
+
+  it("set second and third fields", async function () {
+    const dataObj = {
+      text2: "text 2 from test 2",
+      text3: "text 3 from test 2",
+    };
+    await indexPage.sendKeys(dataObj);
+  });
 });
