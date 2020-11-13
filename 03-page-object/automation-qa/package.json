@@ -10,7 +10,7 @@
     "license": "ISC",
     "dependencies": {
         "chai": "^4.2.0",
-        "mocha": "^8.0.1",
+        "mocha": "^8.2.1",
         "protractor": "^7.0.0"
     }
 }
